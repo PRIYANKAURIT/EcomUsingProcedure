@@ -32,6 +32,7 @@ namespace EcomUsingProcedure.Repository
             {
                 DynamicParameters dp = new DynamicParameters();
                 dp.Add("@cust_email", log.cust_email);
+                dp.Add("@passwords", log.passwords);
                 var customer = await connection.QueryFirstOrDefaultAsync<customers>(query,dp,commandType:System.Data.CommandType.StoredProcedure);
                 return customer;
             }
